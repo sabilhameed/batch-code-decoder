@@ -43,30 +43,8 @@ That last condition matters. A code decoding to a date that hasn't happened yet 
 
 ---
 
-## Two builds
-
-| File | Style | Use it for |
-|------|-------|-----------|
-| `index.html` | GINZA — soft neomorphic surfaces, Shiseido red accent, Cormorant Garamond and Sora | Store counters, offices, anything customer-facing |
-| `decoder-flat.html` | High-contrast flat, system fonts | Goods receipt, pick lines, harsh lighting, cheap screens |
-
-Neomorphism trades contrast for elegance. Those soft shadows depend on subtle luminance differences and they flatten under fluorescent strips or at low screen brightness. Text stays at full contrast in both builds, but the sense of depth doesn't survive a bright warehouse. Pick per audience — there's no reason sales and logistics need the same link.
-
-Both builds share identical decoding logic.
 
 ---
-
-## Deploying it
-
-GitHub Pages is the shortest path to a URL you can share.
-
-1. **Settings → Pages**
-2. Source: **Deploy from a branch**, branch `main`, folder `/ (root)`
-3. Save, wait about a minute
-
-Your URL will be `https://<org-or-user>.github.io/<repo>/`. Paste that into email or WhatsApp — share the link, never the `.html` file. Sent as an attachment, iOS opens it in a preview that blocks JavaScript, and staff get a page where typing does nothing.
-
-Private repos need a paid GitHub plan for Pages. If that's a blocker, any static host or internal web server works the same way: it's one file with no backend.
 
 ### Getting it onto phones
 
@@ -85,15 +63,9 @@ Print a QR code pointing at the URL and stick it at goods receipt and on the pic
 
 ## Verification
 
-The decoding logic was checked against all 4,551 rows of the source spreadsheet (`Production_date_calculator.xlsx`, covering 2015–2026). Every row resolves to the correct production date, either as the primary reading or as the offered alternate.
+The decoding logic was checked against 4,551 sample batches (covering 2015–2026). Every row resolves to the correct production date, either as the primary reading or as the offered alternate.
 
-Three defects in that spreadsheet are worth recording, since they're the reason this tool exists rather than a lookup table:
-
-- **31 December 2020 is missing.** Batch `0366` returns nothing. 2020 was a leap year and the row was never added.
-- **169 duplicated rows in 2024**, roughly mid-July onward.
-- **899 duplicated batch codes** across the two tabs, from the ten-year repeat described above. A `VLOOKUP` against that file silently returns whichever it hits first.
-
-The spreadsheet also stops at 2026. This tool is pure date arithmetic, so it doesn't expire.
+This tool is pure date arithmetic.
 
 ---
 
