@@ -69,18 +69,6 @@ This tool is pure date arithmetic.
 
 ---
 
-## Repo contents
-
-```
-├── index.html            # GINZA build (default, served by Pages)
-├── decoder-flat.html     # high-contrast build
-└── README.md
-```
-
-No build step and no dependencies. The GINZA build embeds subsetted WOFF2 fonts as base64 so it renders identically offline; that's why it's 76KB against 15KB for the flat build. Edit either file directly and commit.
-
----
-
 ## Known limits
 
 - **Format assumption.** Every code is assumed to be four numeric digits. Alpha prefixes, plant codes and other formats will be rejected. If a line prints something different, that needs handling before rollout.
