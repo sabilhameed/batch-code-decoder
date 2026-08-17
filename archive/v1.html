@@ -133,74 +133,6 @@ table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
 th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--gz-mist)}
 th{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gz-pewter)}
 td.n{font-weight:600;letter-spacing:.1em}
-
-/* ---------- mode toggle ---------- */
-.seg{display:flex;gap:6px;padding:6px;border-radius:var(--r-full);margin-bottom:22px;
-  box-shadow:inset 4px 4px 9px rgba(174,174,192,.38),inset -4px -4px 9px #FFFFFF}
-.seg-btn{flex:1;font-family:var(--f-body);font-size:11.5px;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;padding:12px 8px;min-height:44px;border:none;border-radius:var(--r-full);
-  background:transparent;color:var(--gz-pewter);cursor:pointer;
-  transition:all 220ms var(--ease-smooth)}
-.seg-btn.on{background:var(--gz-neo-bg);color:var(--gz-red);
-  box-shadow:4px 4px 9px var(--gz-neo-lo),-4px -4px 9px var(--gz-neo-hi)}
-
-/* ---------- batch entry ---------- */
-.ta-wrap{padding:6px}
-#codes{width:100%;min-height:148px;resize:vertical;display:block;
-  font-family:var(--f-body);font-size:17px;font-weight:400;letter-spacing:.14em;line-height:1.85;
-  padding:16px 18px;border:none;background:transparent;color:var(--gz-ink);outline:none;
-  border-radius:var(--r-lg)}
-#codes::placeholder{color:#C3C3D2;letter-spacing:.06em}
-.ta-wrap:focus-within{box-shadow:inset 6px 6px 12px rgba(174,174,192,.45),inset -6px -6px 12px #FFFFFF,0 0 0 2px var(--gz-red-glow)}
-.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch;margin-top:18px}
-.btn-row>button{margin-top:0;display:inline-flex;align-items:center;justify-content:center;line-height:1}
-.btn-primary{font-family:var(--f-body);font-size:12px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;padding:14px 26px;min-height:44px;border:none;border-radius:var(--r-full);
-  background:var(--gz-sunrise);color:#fff;cursor:pointer;
-  box-shadow:5px 5px 13px rgba(212,0,42,.28),-3px -3px 9px var(--gz-neo-hi);
-  transition:all 200ms var(--ease-smooth)}
-.btn-primary:hover{filter:brightness(1.06)}
-.btn-primary:active{box-shadow:inset 3px 3px 8px rgba(120,0,20,.35)}
-.btn-primary[disabled]{background:var(--gz-mist);color:var(--gz-pewter);box-shadow:none;cursor:not-allowed}
-.flash{font-size:12.5px;font-weight:400;color:var(--gz-success-ink);margin-top:14px;letter-spacing:.02em}
-.flash:empty{display:none}
-.flash.err{color:var(--gz-danger-ink)}
-
-/* ---------- batch results ---------- */
-#batchResult{display:none}
-#batchResult.on{display:block;animation:rise .5s cubic-bezier(0,0,.2,1)}
-.sum{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:var(--r-full);
-  font-size:11.5px;font-weight:500;letter-spacing:.04em;background:var(--gz-neo-bg);color:var(--gz-slate);
-  box-shadow:inset 3px 3px 7px var(--gz-neo-in-lo),inset -3px -3px 7px var(--gz-neo-in-hi)}
-.chip b{font-weight:600;color:var(--gz-ink)}
-.chip i{width:7px;height:7px;border-radius:50%;display:block}
-.chip.ok i{background:var(--gz-success)} .chip.warn i{background:var(--gz-warning)}
-.chip.bad i{background:var(--gz-danger)} .chip.err i{background:var(--gz-pewter)}
-.tbl-wrap{margin-top:20px;max-height:62vh;overflow:auto;-webkit-overflow-scrolling:touch;
-  border-radius:var(--r-lg);
-  box-shadow:inset 5px 5px 11px rgba(174,174,192,.30),inset -5px -5px 11px #FFFFFF}
-#btbl{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;margin:0;font-size:12.5px}
-#btbl th{position:sticky;top:0;z-index:2;background:var(--gz-neo-bg);white-space:nowrap;
-  padding:14px 10px;border-bottom:1px solid var(--gz-mist)}
-#btbl th[data-sort]{cursor:pointer;user-select:none}
-#btbl th[data-sort]:hover{color:var(--gz-red)}
-#btbl th .arw{opacity:0;margin-left:5px;font-size:9px}
-#btbl th.sorted{color:var(--gz-red)}
-#btbl th.sorted .arw{opacity:1}
-#btbl td{padding:12px 10px;border-bottom:1px solid var(--gz-mist);white-space:nowrap;vertical-align:top}
-#btbl tbody tr:last-child td{border-bottom:none}
-#btbl tbody tr:hover td{background:rgba(255,255,255,.55)}
-#btbl td.code{font-weight:600;letter-spacing:.12em}
-#btbl td.note{white-space:normal;min-width:130px;font-weight:300;color:var(--gz-pewter);font-size:12px}
-.tag.sm{margin-top:0;padding:5px 11px;font-size:10px;letter-spacing:.06em}
-.mini{font-size:11px;font-weight:300;color:var(--gz-pewter);margin-top:6px}
-tr.bad-row td.code{color:var(--gz-danger-ink)}
-.csv-box{margin-top:16px}
-.csv-box textarea{width:100%;min-height:150px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:11.5px;line-height:1.6;padding:14px;border:none;outline:none;resize:vertical;
-  border-radius:var(--r-md);background:var(--gz-neo-bg);color:var(--gz-slate);
-  box-shadow:inset 4px 4px 9px var(--gz-neo-in-lo),inset -4px -4px 9px var(--gz-neo-in-hi)}
 footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);margin-top:36px;line-height:1.9;letter-spacing:.02em}
 </style>
 </head>
@@ -210,41 +142,19 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
   <div class="wrap">
     <div class="overline">Production &amp; expiry</div>
     <h1>Batch code decoder</h1>
-    <p class="sub">Type the 4-digit code from the product — or paste a whole list — to get production and expiry dates.</p>
+    <p class="sub">Type the 4-digit code from the product to get its production and expiry dates.</p>
   </div>
 </header>
 
 <div class="wrap">
 
   <div class="neo entry">
-    <div class="seg" role="tablist" aria-label="Entry mode">
-      <button class="seg-btn on" id="tabSingle" type="button" role="tab" aria-selected="true">One code</button>
-      <button class="seg-btn" id="tabBatch" type="button" role="tab" aria-selected="false">Many codes</button>
+    <label class="lab" for="code">Batch code</label>
+    <div class="neo-in field">
+      <input id="code" type="text" inputmode="numeric" autocomplete="off" maxlength="4"
+             placeholder="0000" aria-describedby="hint">
     </div>
-
-    <div id="paneSingle" role="tabpanel">
-      <label class="lab" for="code">Batch code</label>
-      <div class="neo-in field">
-        <input id="code" type="text" inputmode="numeric" autocomplete="off" maxlength="4"
-               placeholder="0000" aria-describedby="hint">
-      </div>
-      <div class="hint" id="hint"></div>
-    </div>
-
-    <div id="paneBatch" role="tabpanel" hidden>
-      <label class="lab" for="codes">Batch codes</label>
-      <div class="neo-in ta-wrap">
-        <textarea id="codes" spellcheck="false" autocomplete="off" aria-describedby="bhint"
-                  placeholder="5182&#10;4001&#10;6023, 5310, 4288"></textarea>
-      </div>
-      <div class="hint" id="bhint">One per line, or separated by commas, semicolons, tabs or spaces.</div>
-      <div class="btn-row">
-        <button class="btn-primary" id="btnCsv" type="button" disabled>Export CSV</button>
-        <button class="alt-btn" id="btnCopy" type="button">Copy for Excel</button>
-        <button class="alt-btn" id="btnClear" type="button">Clear</button>
-      </div>
-      <div class="flash" id="bflash" aria-live="polite"></div>
-    </div>
+    <div class="hint" id="hint"></div>
   </div>
 
   <div id="result" aria-live="polite">
@@ -274,32 +184,6 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
     </div>
 
     <div id="notices"></div>
-  </div>
-
-  <div id="batchResult" aria-live="polite">
-    <div class="neo">
-      <div class="overline" style="color:var(--gz-pewter);letter-spacing:.2em">Decoded</div>
-      <div class="sum" id="bsum"></div>
-      <div class="hint" id="scrollHint" style="text-align:left;margin-top:16px" hidden>Swipe the table sideways to see every column.</div>
-      <div class="tbl-wrap">
-        <table id="btbl">
-          <thead>
-            <tr>
-              <th data-sort="code">Code<span class="arw">▾</span></th>
-              <th data-sort="prod">Produced<span class="arw">▾</span></th>
-              <th data-sort="age">Age<span class="arw">▾</span></th>
-              <th data-sort="sk">Skincare &middot; 3y<span class="arw">▾</span></th>
-              <th data-sort="fr">Fragrance &middot; 4y<span class="arw">▾</span></th>
-            </tr>
-          </thead>
-          <tbody id="btbody"></tbody>
-        </table>
-      </div>
-      <div class="csv-box" id="csvBox" hidden>
-        <div class="hint" style="text-align:left">Download was blocked here — select everything below and paste it into a <code>.csv</code> file or straight into Excel.</div>
-        <textarea id="csvOut" readonly spellcheck="false"></textarea>
-      </div>
-    </div>
   </div>
 
   <details>
@@ -413,8 +297,8 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
     $("pdate").textContent=fmt(r.prod);
     var age=days(r.prod,r.now);
     $("pmeta").textContent=r.future
-      ? "This date has not happened yet — check the code."
-      : (age===0?"Produced today.":age.toLocaleString()+" days ago · day "+r.doy+" of "+r.year);
+      ? "This date has not happened yet \u2014 check the code."
+      : (age===0?"Produced today.":age.toLocaleString()+" days ago \u00b7 day "+r.doy+" of "+r.year);
 
     var eSk=addYears(r.prod,3), eFr=addYears(r.prod,4);
     paint("sk",eSk,status(eSk,r.now,r.prod));
@@ -446,265 +330,12 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
   var rev=$("revDate"), revOut=$("revOut");
   rev.value=(function(){var t=today();return t.getFullYear()+"-"+pad3(t.getMonth()+1).slice(1)+"-"+pad3(t.getDate()).slice(1);})();
   function doRev(){
-    if(!rev.value){revOut.textContent="————";return;}
+    if(!rev.value){revOut.textContent="\u2014\u2014\u2014\u2014";return;}
     var p=rev.value.split("-");
     var d=new Date(+p[0],+p[1]-1,+p[2]);
     revOut.textContent=(d.getFullYear()%10)+pad3(doyOf(d));
   }
   rev.addEventListener("input",doRev); doRev();
-
-
-  /* =====================================================================
-     BATCH MODE
-     Re-uses decode() and status() above so both modes can never disagree.
-     ===================================================================== */
-  var MAX_ROWS=5000;
-  var paneSingle=$("paneSingle"), paneBatch=$("paneBatch");
-  var tabSingle=$("tabSingle"), tabBatch=$("tabBatch");
-  var codesEl=$("codes"), bhint=$("bhint"), bflash=$("bflash");
-  var batchResult=$("batchResult"), bsum=$("bsum"), btbody=$("btbody"), btbl=$("btbl");
-  var btnCsv=$("btnCsv"), btnCopy=$("btnCopy"), btnClear=$("btnClear");
-  var csvBox=$("csvBox"), csvOut=$("csvOut");
-  var rows=[], sortKey="i", sortDir=1, flashTimer=null;
-
-  function pad2(n){return (n<10?"0":"")+n;}
-  function fmtS(d){return d.getDate()+" "+MONTHS[d.getMonth()].slice(0,3)+" "+d.getFullYear();}
-  function iso(d){return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate());}
-  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-
-  function flash(msg,isErr){
-    bflash.className="flash"+(isErr?" err":"");
-    bflash.textContent=msg||"";
-    if(flashTimer) clearTimeout(flashTimer);
-    if(msg) flashTimer=setTimeout(function(){bflash.textContent="";},4000);
-  }
-
-  function splitCodes(text){
-    var parts=String(text).split(/[\s,;|\/]+/), out=[], i;
-    for(i=0;i<parts.length;i++) if(parts[i].replace(/\s/g,"")!=="") out.push(parts[i]);
-    return out;
-  }
-
-  function buildRow(raw,i){
-    var input=String(raw).trim();
-    var digits=input.replace(/\D/g,"");
-    var row={i:i,input:input,code:digits||input,ok:false,err:"",note:""};
-    if(digits.length!==4){
-      row.err=digits.length>4
-        ? "Expected 4 digits, found "+digits.length
-        : "Not a 4-digit code ("+digits.length+" digit"+(digits.length===1?"":"s")+")";
-      return row;
-    }
-    var r=decode(digits,null);
-    if(!r.ok){ row.err=r.msg||"Could not read this code"; return row; }
-
-    row.ok=true;
-    row.prod=r.prod; row.year=r.year; row.doy=r.doy; row.future=r.future;
-    row.age=days(r.prod,r.now);
-    row.sk=addYears(r.prod,3); row.fr=addYears(r.prod,4);
-    row.skSt=status(row.sk,r.now,r.prod); row.frSt=status(row.fr,r.now,r.prod);
-    row.skLeft=days(r.now,row.sk); row.frLeft=days(r.now,row.fr);
-
-    var notes=[];
-    if(digits!==input) notes.push("read as "+digits);
-    if(r.future) notes.push("production date is in the future — check the code");
-    else if(r.alt) notes.push("could also be "+r.alt.year+" ("+fmt(r.alt.date)+")");
-    row.note=notes.join("; ");
-    return row;
-  }
-
-  function sorted(){
-    var v=rows.slice();
-    v.sort(function(a,b){
-      var ka,kb;
-      if(a.ok!==b.ok) return a.ok?-1:1;   /* unreadable codes always last */
-      switch(sortKey){
-        case "code": ka=a.code; kb=b.code; break;
-        case "prod": ka=a.ok?+a.prod:-Infinity; kb=b.ok?+b.prod:-Infinity; break;
-        case "age":  ka=a.ok?a.age:-Infinity;  kb=b.ok?b.age:-Infinity;  break;
-        case "sk":   ka=a.ok?a.skLeft:-Infinity; kb=b.ok?b.skLeft:-Infinity; break;
-        case "fr":   ka=a.ok?a.frLeft:-Infinity; kb=b.ok?b.frLeft:-Infinity; break;
-        default:     ka=a.i; kb=b.i;
-      }
-      if(ka<kb) return -1*sortDir;
-      if(ka>kb) return  1*sortDir;
-      return a.i-b.i;
-    });
-    return v;
-  }
-
-  function cell(exp,st,left){
-    return '<span class="tag sm '+st.k+'"><i></i><span>'+st.label+'</span></span>'
-         + '<div class="mini">'+fmtS(exp)+' &middot; '
-         + (left<0 ? Math.abs(left).toLocaleString()+" d ago" : left.toLocaleString()+" d left")
-         + '</div>';
-  }
-
-  function paintTable(){
-    var v=sorted(), html=[], i, r;
-    for(i=0;i<v.length;i++){
-      r=v[i];
-      if(!r.ok){
-        html.push('<tr class="bad-row"><td class="code">'+esc(r.input||"—")+'</td>'
-          +'<td colspan="4" class="note" style="color:var(--gz-danger-ink)">'+esc(r.err)+'</td></tr>');
-        continue;
-      }
-      html.push('<tr>'
-        +'<td class="code">'+esc(r.code)+'</td>'
-        +'<td>'+fmtS(r.prod)+'<div class="mini">day '+r.doy+' of '+r.year+'</div></td>'
-        +'<td>'+(r.future?"—":r.age.toLocaleString()+' d')+'</td>'
-        +'<td>'+cell(r.sk,r.skSt,r.skLeft)+'</td>'
-        +'<td>'+cell(r.fr,r.frSt,r.frLeft)+'</td>'
-        +'</tr>');
-    }
-    btbody.innerHTML=html.join("");
-
-    var th=btbl.querySelectorAll("th"), j;
-    for(j=0;j<th.length;j++){
-      th[j].classList.toggle("sorted",th[j].getAttribute("data-sort")===sortKey);
-      var a=th[j].querySelector(".arw");
-      if(a) a.textContent=sortDir===1?"▾":"▴";
-    }
-  }
-
-  function paintSummary(){
-    var n=rows.length, bad=0, exp=0, soon=0, ok=0, i;
-    for(i=0;i<n;i++){
-      if(!rows[i].ok){bad++;continue;}
-      if(rows[i].skSt.k==="bad") exp++;
-      else if(rows[i].skSt.k==="warn") soon++;
-      else ok++;
-    }
-    var c=['<span class="chip"><b>'+n.toLocaleString()+'</b> code'+(n===1?"":"s")+'</span>'];
-    if(ok)   c.push('<span class="chip ok"><i></i><b>'+ok+'</b> in date</span>');
-    if(soon) c.push('<span class="chip warn"><i></i><b>'+soon+'</b> expiring soon</span>');
-    if(exp)  c.push('<span class="chip bad"><i></i><b>'+exp+'</b> expired</span>');
-    if(bad)  c.push('<span class="chip err"><i></i><b>'+bad+'</b> unreadable</span>');
-    bsum.innerHTML=c.join("")
-      + '<span class="chip" style="box-shadow:none;color:var(--gz-pewter)">status shown for the 3-year shelf life</span>';
-  }
-
-  function runBatch(){
-    var list=splitCodes(codesEl.value), trimmed=false;
-    if(list.length>MAX_ROWS){ list=list.slice(0,MAX_ROWS); trimmed=true; }
-    rows=list.map(buildRow);
-
-    btnCsv.disabled=rows.length===0;
-    csvBox.hidden=true;
-
-    if(!rows.length){
-      batchResult.classList.remove("on");
-      bhint.className="hint";
-      bhint.textContent="One per line, or separated by commas, semicolons, tabs or spaces.";
-      return;
-    }
-    bhint.className="hint";
-    bhint.textContent=trimmed
-      ? "Showing the first "+MAX_ROWS.toLocaleString()+" codes."
-      : rows.length.toLocaleString()+" code"+(rows.length===1?"":"s")+" read.";
-    paintSummary();
-    paintTable();
-    batchResult.classList.add("on");
-    var wrap=btbl.parentNode;
-    $("scrollHint").hidden = wrap.scrollWidth <= wrap.clientWidth + 4;
-  }
-
-  /* ---------- CSV ---------- */
-  function csvCell(v){
-    v=(v===null||v===undefined)?"":String(v);
-    return /[",;\n\r]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
-  }
-  function buildRowsForExport(){
-    var v=sorted(), out=[], i, r;
-    out.push(["Batch code","Readable","Production date","Day of year","Year","Age (days)",
-              "Skincare expiry (3y)","Skincare status","Skincare days left",
-              "Fragrance expiry (4y)","Fragrance status","Fragrance days left","Notes"]);
-    for(i=0;i<v.length;i++){
-      r=v[i];
-      if(!r.ok){
-        out.push([r.input,"No","","","","","","","","","","",r.err]);
-      }else{
-        out.push([r.code,"Yes",iso(r.prod),r.doy,r.year,(r.future?"":r.age),
-                  iso(r.sk),r.skSt.label,r.skLeft,
-                  iso(r.fr),r.frSt.label,r.frLeft,r.note]);
-      }
-    }
-    return out;
-  }
-  function toDelim(d){
-    return buildRowsForExport().map(function(r){
-      return r.map(d===","?csvCell:function(v){return (v===null||v===undefined)?"":String(v);}).join(d);
-    }).join("\r\n");
-  }
-  function exportCSV(){
-    var text="﻿"+toDelim(",");
-    var name="batch-codes-"+iso(today())+".csv";
-    try{
-      var blob=new Blob([text],{type:"text/csv;charset=utf-8;"});
-      if(window.navigator && window.navigator.msSaveBlob){
-        window.navigator.msSaveBlob(blob,name); csvBox.hidden=true; flash("CSV saved."); return;
-      }
-      var url=URL.createObjectURL(blob), a=document.createElement("a");
-      a.href=url; a.download=name; a.rel="noopener";
-      document.body.appendChild(a); a.click();
-      setTimeout(function(){URL.revokeObjectURL(url); a.remove();},1500);
-      csvBox.hidden=true;
-      flash(rows.length.toLocaleString()+" rows exported to "+name);
-    }catch(e){
-      csvOut.value=toDelim(","); csvBox.hidden=false; csvOut.select();
-      flash("Download blocked — copy the text below instead.",true);
-    }
-  }
-  function copyTSV(){
-    var text=toDelim("\t");
-    function fallback(){
-      csvOut.value=text; csvBox.hidden=false; csvOut.focus(); csvOut.select();
-      flash("Copy blocked — select the text below and copy it.",true);
-    }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){
-        flash("Copied — paste straight into Excel.");
-      },fallback);
-    } else fallback();
-  }
-
-  /* ---------- wiring ---------- */
-  function setMode(m){
-    var b=(m==="batch");
-    paneSingle.hidden=b; paneBatch.hidden=!b;
-    tabSingle.classList.toggle("on",!b); tabBatch.classList.toggle("on",b);
-    tabSingle.setAttribute("aria-selected",String(!b));
-    tabBatch.setAttribute("aria-selected",String(b));
-    result.style.display=b?"none":"";
-    batchResult.style.display=b?"":"none";
-    if(b){ codesEl.focus(); runBatch(); } else { input.focus(); }
-  }
-  tabSingle.addEventListener("click",function(){setMode("single");});
-  tabBatch.addEventListener("click",function(){setMode("batch");});
-
-  var debounce=null;
-  codesEl.addEventListener("input",function(){
-    if(debounce) clearTimeout(debounce);
-    debounce=setTimeout(runBatch,180);
-  });
-  codesEl.addEventListener("paste",function(){
-    setTimeout(runBatch,0);
-  });
-
-  btbl.addEventListener("click",function(e){
-    var th=e.target.closest("th[data-sort]"); if(!th) return;
-    var k=th.getAttribute("data-sort");
-    if(k===sortKey) sortDir=-sortDir; else {sortKey=k;sortDir=1;}
-    paintTable();
-  });
-
-  btnCsv.addEventListener("click",exportCSV);
-  btnCopy.addEventListener("click",copyTSV);
-  btnClear.addEventListener("click",function(){
-    codesEl.value=""; runBatch(); codesEl.focus(); flash("");
-  });
-
-  batchResult.style.display="none";
 
   input.focus();
 })();
