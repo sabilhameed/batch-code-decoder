@@ -4,6 +4,10 @@ Turns the 4-digit batch code printed on a product into its production date and e
 
 No install, no login, no server. It's a single HTML file that runs entirely in the browser, so it keeps working in a dead spot in the warehouse once the page has loaded.
 
+<img width="708" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e1722fd-39b3-4d0e-8166-61ea148d1594" />
+
+<img width="749" height="1388" alt="image" src="https://github.com/user-attachments/assets/9fcfdfef-4001-4e90-a7a6-23d0aa4e378d" />
+
 ---
 ## Demo site 
 
