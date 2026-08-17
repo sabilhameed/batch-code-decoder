@@ -5,6 +5,11 @@ Turns the 4-digit batch code printed on a product into its production date and e
 No install, no login, no server. It's a single HTML file that runs entirely in the browser, so it keeps working in a dead spot in the warehouse once the page has loaded.
 
 ---
+## Demo site 
+
+https://sabilhameed.github.io/batch-code-decoder/index.html
+
+Access the tool using the above link to preview and test the functionality.
 
 ## The batch code
 
