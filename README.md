@@ -109,8 +109,18 @@ This tool is pure date arithmetic.
 
 | Version | What changed |
 |---------|--------------|
-| **v2** *(current)* | Batch mode — paste many codes, sortable results table, CSV and clipboard export, per-row failure reasons. |
+| **v3** *(current)* | Security hardening after IT review — CSV/TSV formula-injection guard on both export paths, and full HTML escaping of unreadable input echoed back into the table. No change to decoding or to the interface. |
+| v2 | Batch mode — paste many codes, sortable results table, CSV and clipboard export, per-row failure reasons. Archived at [`archive/v2.html`](archive/v2.html). |
 | v1 | Single-code decoding. Archived at [`archive/v1.html`](archive/v1.html). |
+
+### What v3 fixed
+
+The August 2026 Shiseido EMEA IT / cybersecurity review raised two findings, both closed before release:
+
+- **Formula injection in the exports.** Pasted text is echoed into the CSV and the copy-for-Excel clipboard, so a value opening with `=`, `+`, `-`, `@`, TAB or CR could have run as a formula when the file was opened in Excel. Such values are now prefixed with an apostrophe. Numbers the tool calculates itself — day counts, year, day-of-year — deliberately bypass the guard, so "days left" on expired stock still imports as a number and the column still sorts.
+- **Incomplete HTML escaping.** `esc()`, which renders an unreadable entry back into its table row, now escapes `"` and `'` alongside `&`, `<` and `>`.
+
+Full write-up in [SECURITY.md](SECURITY.md).
 
 ---
 
