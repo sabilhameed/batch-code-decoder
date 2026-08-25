@@ -470,14 +470,7 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
   function pad2(n){return (n<10?"0":"")+n;}
   function fmtS(d){return d.getDate()+" "+MONTHS[d.getMonth()].slice(0,3)+" "+d.getFullYear();}
   function iso(d){return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate());}
-  function esc(s){
-    return String(s)
-      .replace(/&/g,"&amp;")
-      .replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;")
-      .replace(/'/g,"&#39;");
-  }
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 
   function flash(msg,isErr){
     bflash.className="flash"+(isErr?" err":"");
@@ -617,16 +610,8 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
   }
 
   /* ---------- CSV ---------- */
-  function sanitizeForSpreadsheet(v){
-    /* Genuine numbers this tool produces (day counts, year, day-of-year) are never
-       attacker-controlled and must stay numeric in Excel, so they bypass the guard.
-       Everything else is treated as untrusted text. */
-    if(typeof v==="number" && isFinite(v)) return String(v);
-    v=(v===null||v===undefined)?"":String(v);
-    return /^[=+\-@\t\r]/.test(v) ? "'"+v : v;
-  }
   function csvCell(v){
-    v=sanitizeForSpreadsheet(v);
+    v=(v===null||v===undefined)?"":String(v);
     return /[",;\n\r]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
   }
   function buildRowsForExport(){
@@ -648,7 +633,7 @@ footer{text-align:center;font-size:12px;font-weight:300;color:var(--gz-pewter);m
   }
   function toDelim(d){
     return buildRowsForExport().map(function(r){
-      return r.map(d===","?csvCell:sanitizeForSpreadsheet).join(d);
+      return r.map(d===","?csvCell:function(v){return (v===null||v===undefined)?"":String(v);}).join(d);
     }).join("\r\n");
   }
   function exportCSV(){
